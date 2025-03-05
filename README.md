@@ -33,3 +33,5 @@ This is a simple **Task Manager** web application built using **PHP**, **MySQL**
        title VARCHAR(255) NOT NULL,
        description TEXT NOT NULL
    );
+
+   wassup
