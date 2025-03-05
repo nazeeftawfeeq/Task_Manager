@@ -20,7 +20,7 @@ if ($result) {
     $row = $result->fetch_assoc();
     $max_id = $row['max_id'];
 
-    // Step 2: Set AUTO_INCREMENT to the next available value
+
     $sql_alter = "ALTER TABLE task AUTO_INCREMENT = " . ($max_id + 1);
     $conn->query($sql_alter); 
 }
@@ -73,6 +73,9 @@ if (isset($_POST['title']) && isset($_POST['description'])) {
                 while ($row = $result->fetch_assoc()) {
                     echo $row['id'] . ") Title: " . htmlspecialchars($row['title']) . "<br>";
                     echo "Description: " . htmlspecialchars($row['description']) . "<br>";
+                    echo '<form action="index.php" method="POST">
+                        <button type="submit" name="delete" value="true">Update</button>
+                    </form>';
                     echo '<form action="index.php" method="POST">
                         <input type="hidden" name="id" value="' . $row["id"] . '">
                         <button type="submit" name="delete" value="true">Delete</button>
