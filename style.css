@@ -1,60 +1,133 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-
+/* General reset for consistent styling */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
+/* Body styling */
 body {
-    font-family: "Roboto", sans-serif;
-    background-color: #E0E1DD;
+    background-color: #f4f4f9;
+    color: #333;
+    padding: 20px;
 }
 
+/* Task Manager container */
+#task-manager {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading */
 .heading {
-    display: flex;
-    height: 140px;
-    font-size: 3em;
-    color: #0D1B2A;
-    justify-content: center;
-    align-items: center;
-    font-weight: 600;
-
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #4CAF50;
 }
 
+/* Form styling */
 form {
-    padding-top: 2em;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 2em;
+    gap: 15px;
 }
 
-input {
-    height: 4em;
-    width: 50%;
-    padding: 0 3em;
-    border-radius: 1em;
-    border-color: #0D1B2A;
-    color:#0D1B2A;
-    font-size: 1em;
+form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 100%;
+    transition: all 0.3s ease;
 }
 
-#create {
-    font-size: 1.5em;
-    height: 2em;
-    width: 10em;
-    border-radius: 2em;
-    font-weight: 600;
-    background-color: #0D1B2A;
-    color: #E0E1DD;
-    transition: transform 300ms ease, background-color 300ms ease;
-    text-align: center;
+form input:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+/* Submit button styling */
+form button {
+    padding: 10px 15px;
+    background-color: #4CAF50;
     border: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
     cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s ease;
 }
 
-#create:hover {
-    transform: scale(1.1);
-    background-color: #1B263B;
+form button:hover {
+    background-color: #45a049;
+}
+
+/* Read tasks section */
+#read {
+    margin-top: 30px;
+}
+
+#read form {
+    margin-top: 10px;
+}
+
+#read form button {
+    background-color: #f44336;
+    padding: 5px 10px;
+    border: none;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#read form button:hover {
+    background-color: #e53935;
+}
+
+/* Success and error messages */
+#task-manager .heading + div {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: center;
+}
+
+#task-manager .heading + div.success {
+    color: #4CAF50;
+}
+
+#task-manager .heading + div.error {
+    color: #f44336;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    #task-manager {
+        padding: 15px;
+    }
+
+    form input {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    form button {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+
+    #read form button {
+        font-size: 12px;
+        padding: 4px 8px;
+    }
 }
