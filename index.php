@@ -52,7 +52,7 @@ if ($result) {
 }
 }
 
-if (isset($_POST['title']) && isset($_POST['description'])) {
+if (isset($_POST['create']) && isset($_POST['title']) && isset($_POST['description'])) {
     $title = $_POST['title'];
     $desc  = $_POST['description'];
 
@@ -91,7 +91,7 @@ if (isset($_POST['title']) && isset($_POST['description'])) {
         <form action="index.php" method="POST">
             <input type="text" name="title" placeholder="Enter Task Title" required>
             <input type="text" name="description" placeholder="Enter description" required>
-            <button type="submit">Create Task</button>
+            <button type="submit" name="create" value="true">Create Task</button>
         </form>
         <div id="read">
             <?php
