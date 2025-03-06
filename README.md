@@ -6,7 +6,7 @@ This is a simple **Task Manager** web application built using **PHP**, **MySQL**
 
 - **Create**: Add new tasks with a title and description.
 - **Read**: View all existing tasks in the database.
-- **Update**: (Not implemented yet) Update existing tasks.
+- **Update**: Update existing tasks.
 - **Delete**: Remove tasks from the database.
 
 ## Technologies Used
